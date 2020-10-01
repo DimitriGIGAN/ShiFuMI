@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+}
+.element{
+  width: 200px;  
+  height: 200px;
+}
+.cercle {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: #000000;
+    margin: auto;
+}
+.gigan{
+  display : flex
+}
+header{
+  background: crimson;
+}
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 1px solid black;
+}
