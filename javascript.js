@@ -1,68 +1,87 @@
-function test() {
-    document.getElementById("iddetests").innerText="ceci est test de mr gramino"
-    
+var userSign = "";
+var computerSign = "";
+
+
+function changeImage(signe) {
+
+    if (signe == 'ciseaux') {
+        document.getElementById("imgClickAndChange").src = "image/l36613_-_ciseaux_inox_boucles_plastiques.jpg";
+        userSign = 'ciseaux';
+    } else if (signe == 'feuille') {
+        document.getElementById("imgClickAndChange").src = "image/Papier-toilette-en-rouleaux-DELCOURT-2-plis-108-rouleaux.jpg";
+        userSign = 'feuille';
+    }
+    else {
+        document.getElementById("imgClickAndChange").src = "image/Pierre.jpeg";
+        userSign = 'pierre';
+    }
+    comparaison();
 }
-function changeImage() {
+function counter() {
+    var clicks = document.getElementById('clicker').innerHTML
+    clicks++
+    document.getElementById('clicker').innerHTML = clicks;
 
-        if (document.getElementById("imgClickAndChange").src == "image/l36613_-_ciseaux_inox_boucles_plastiques.jpg") 
-        {
-            document.getElementById("imgClickAndChange").src = "image/0000-2625965e8d18aa4468ff70920506c9e7-1.png";
-        }
-        else 
-        {
-            document.getElementById("imgClickAndChange").src = "image/l36613_-_ciseaux_inox_boucles_plastiques.jpg";
-        }
-    }
-    function changeImage2() {
-
-        if (document.getElementById("imgClickAndChange").src == "image/Papier-toilette-en-rouleaux-DELCOURT-2-plis-108-rouleaux.jpg") 
-        {
-            document.getElementById("imgClickAndChange").src = "image/0000-2625965e8d18aa4468ff70920506c9e7-1.png";
-        }
-        else 
-        {
-            document.getElementById("imgClickAndChange").src = "image/Papier-toilette-en-rouleaux-DELCOURT-2-plis-108-rouleaux.jpg";
-        }
-    }
-    function changeImage3() {
-
-        if (document.getElementById("imgClickAndChange").src == "image/Pierre.jpeg") 
-        {
-            document.getElementById("imgClickAndChange").src = "image/0000-2625965e8d18aa4468ff70920506c9e7-1.png";
-        }
-        else 
-        {
-            document.getElementById("imgClickAndChange").src = "image/Pierre.jpeg";
-        }
-    }
-    function counter(){
-        var clicks = document.getElementById('clicker').innerHTML
-        clicks++
+    if (clicks > 3) {
+        clicks = 0;
         document.getElementById('clicker').innerHTML = clicks;
-        
-        if(clicks > 3){
-            clicks = 0;
-            document.getElementById('clicker').innerHTML = clicks;
-        }
-        }
-        
-    function random() {
-        var random = Math.round(Math.random()*3)
-        if (random == 1){
-       
-       console.log("pierre");
-            document.getElementById("random").src = "image/Pierre.jpeg"
-        }
-        if (random == 2){
-            console.log("feuille"); document.getElementById("random").src = "image/Papier-toilette-en-rouleaux-DELCOURT-2-plis-108-rouleaux.jpg"
+        document.getElementById("p1").style.backgroundColor = "black";
+        document.getElementById("p2").style.backgroundColor = "black";
+        document.getElementById("p3").style.backgroundColor = "black";
+        document.getElementById("p4").style.backgroundColor = "black";
+        document.getElementById("p5").style.backgroundColor = "black";
+        document.getElementById("p6").style.backgroundColor = "black";
     }
-        if (random == 3) {
-            console.log("ciceaux");document.getElementById("random").src = "image/l36613_-_ciseaux_inox_boucles_plastiques.jpg"
+    if (clicks == 1) {
+        document.getElementById("p1").style.backgroundColor = "red";
+        document.getElementById("p4").style.backgroundColor = "red";
     }
+    else if (clicks == 2) {
+        document.getElementById("p2").style.backgroundColor = "orange";
+        document.getElementById("p5").style.backgroundColor = "orange";
     }
-    function color() {
-        document.getElementById("p1").style.background = "blue"; 
-        if (color) {
-            
-        }
+    else if (clicks == 3) {
+        document.getElementById("p3").style.backgroundColor = "green";
+        document.getElementById("p6").style.backgroundColor = "green";
     }
+}
+
+function random() {
+    var random = Math.round(Math.random() * 3)
+    if (random == 1) {
+        document.getElementById("random").src = "image/Pierre.jpeg"
+        computerSign = 'pierre';
+    }
+    if (random == 2) {
+        document.getElementById("random").src = "image/Papier-toilette-en-rouleaux-DELCOURT-2-plis-108-rouleaux.jpg"
+        computerSign = 'feuille';
+    }
+    if (random == 3) {
+        document.getElementById("random").src = "image/l36613_-_ciseaux_inox_boucles_plastiques.jpg"
+        computerSign = 'ciseaux';
+    }
+    console.log(userSign);
+    console.log(computerSign);
+}
+
+function comparaison() {
+    if (userSign == computerSign) {
+        alert('Draw');
+        console.log('draw');
+    }
+    else if (userSign == 'ciseaux' && computerSign == 'pierre' || userSign == 'pierre' && computerSign == 'feuille' || userSign == 'feuille' && computerSign == 'ciseaux') {
+        alert('lose');
+        console.log('lose');
+    }
+    else {
+        alert('Win');
+        console.log('win');
+    }
+}
+function Nom() {
+
+    var username = prompt("NOM");
+
+    document.getElementById('name').innerText = username;
+}
+

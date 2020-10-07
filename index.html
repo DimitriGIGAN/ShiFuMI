@@ -20,16 +20,16 @@
     <title>十福密</title>
 </head>
 
-<body>
+<body onload="Nom()"> 
     <header>
         <h1>十福密</h1>
     </header>
     <div class="jumbotron" >
-        <section class=" text-center">
+        <section class="  text-center">
             <div class="container">
                 <div class="row">
                     
-                    <div class="col-sm gigan">
+                    <div class="col-sm bg-primary gigan">
                         
                         
                         <div id="p1"     class="cercle"></div>
@@ -37,18 +37,14 @@
                         <div  id="p3"class="cercle"></div>
                     </div>
                     <div class="col-sm">
-                        <form>
-                            <label for="choose">donne ton nom LM4</label>
-                            <input id="choose" name="i_like" required pattern="banane|cerise">
-                            
-                          </form>
+                       
+                            <h1 id="name"></h1> 
+                           
                     </div>
-                    <div class="col-sm gigan">
+                    <div class="col-sm bg-primary gigan">
 
 
-                        <div>
-                            
-                        </div>
+                        
                         <div  id="p4" class="cercle"></div>
                         <div  id="p5" class="cercle"></div>
                         <div  id="p6" class="cercle"></div>
@@ -57,34 +53,35 @@
             </div>
         </section>
     </div>
-    </section>
-    <section class=" text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <img id="imgClickAndChange" class="element" src="image/0000-2625965e8d18aa4468ff70920506c9e7-1.png">
-                </div>
-                <div class="col-sm text-center">
-                    <h1 id="clicker">0</h1>
-                </div>
-                <div class="col-sm">
-                    <img id="random" class="element" src="image/0000-2625965e8d18aa4468ff70920506c9e7-1.png">
-                </div>
-            </div>
-        </div>
-        </div>
+    
     </section>
     <section class="jumbotron text-center">
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <img onclick="changeImage();counter(); random();color();"  class="element" src="image/l36613_-_ciseaux_inox_boucles_plastiques.jpg">
+                    <img id="imgClickAndChange" class="element" src="image/img_bg_blue-31183aac3a506024c9f5f4696ca28e64-1.png">
+                </div>
+                <div class="col-sm text-center">
+                    <h1 id="clicker">0</h1>
                 </div>
                 <div class="col-sm">
-                    <img onclick="changeImage2();counter(); random() ;color();"class="element" src="image/Papier-toilette-en-rouleaux-DELCOURT-2-plis-108-rouleaux.jpg">
+                    <img id="random" class="element" src="image/img_bg_red-48936e98c07f75141973c7e06040a867-1.png">
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <img id="playerChoice"  onclick="changeImage('ciseaux');counter(); random()"  class="element" src="image/l36613_-_ciseaux_inox_boucles_plastiques.jpg">
                 </div>
                 <div class="col-sm">
-                    <img  onclick="changeImage3();counter(); random();color(); "  class="element" src="image/Pierre.jpeg">
+                    <img id="playerChoice" onclick="changeImage('feuille');counter(); random() "class="element" src="image/Papier-toilette-en-rouleaux-DELCOURT-2-plis-108-rouleaux.jpg">
+                </div>
+                <div class="col-sm">
+                    <img id="playerChoice"  onclick="changeImage('pierre');counter(); random()"  class="element" src="image/Pierre.jpeg">
     </section>
     </div>
 </body>
